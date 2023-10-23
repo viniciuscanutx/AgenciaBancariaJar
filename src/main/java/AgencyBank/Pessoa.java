@@ -4,25 +4,25 @@ public class Pessoa {
 
     private static int contador1 = 1;
 
-    private String nome;
+    private String name;
     private String cpf;
     private String email;
 
-    public Pessoa(String nome, String cpf, String email) {
+    public Pessoa(String name, String cpf, String email) {
 
-        this.nome = nome;
+        this.name = name;
         this.cpf = cpf;
         this.email = email;
         contador1 += 1;
 
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getCpf() {
@@ -42,7 +42,8 @@ public class Pessoa {
     }
 
     public String toString() {
-        return "\nNome: " + this.getNome() +
+
+        return "\nNome: " + this.getName() +
                 "\nCPF: " + this.getCpf() +
                 "\nE-mail: " + this.getEmail();
 
