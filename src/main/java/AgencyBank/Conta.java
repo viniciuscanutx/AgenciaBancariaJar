@@ -1,5 +1,7 @@
 package AgencyBank;
 
+import Utilities.Util;
+
 public class Conta {
 
     private static int accountcounter = 1;
@@ -39,5 +41,33 @@ public class Conta {
         this.saldo = saldo;
     }
 
+    public String toString(){
+
+        return "\nNumero da Conta: " + this.getAccountnumber() +
+               "\nNome: " + this.pessoa.getName() +
+                "\nCPF: " + this.pessoa.getCpf() +
+                "\nE-mail: " + this.pessoa.getEmail() +
+                "\nSaldo: " + Util.doubletoString(this.getSaldo()) +
+                "\n";
+
+    }
+
+    public void deposit(Double valor){
+        if(valor > 0 ){
+          setSaldo(getSaldo() + valor);
+          System.out.println("Seu depósito foi realizado!");
+        } else {
+            System.out.println("Erro ao fazer depósito.");
+        }
+    }
+
+    public void sacar(Double valor){
+        if(valor > 0 && this.getSaldo() >= valor){
+            setSaldo(getSaldo() - valor);
+            System.out.println("Seu saque foi realizado!");
+        }else {
+            System.out.println("Erro ao fazer saque.");
+        }
+    }
 
 }
